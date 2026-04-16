@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reset Password</title>
+  <style>
+   body {
+  margin: 0;
+  font-family: Arial;
+  background: #38ef7d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 300px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #4facfe;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4facfe;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #00c6ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+  <h2>Reset Password</h2>
+  <input type="password" placeholder="New Password" id="newPass"><br><br>
+  <input type="password" placeholder="Confirm Password" id="confirmPass"><br><br>
+  <button onclick="resetPassword() ">Reset Password</button>
+  </div>
+  <script>
+function resetPassword() {
+  let newPass = document.getElementById("newPass").value;
+  let confirmPass = document.getElementById("confirmPass").value;
+
+  if (newPass === "" || confirmPass === "") {
+    alert("Fill all fields!");
+  } else if (newPass !== confirmPass) {
+    alert("Passwords do not match ❌");
+  } else {
+    alert("Password Reset Successful ✅");
+    window.location.href = "login.html";
+  }
+}
+</script>
+</body>
+</html>
